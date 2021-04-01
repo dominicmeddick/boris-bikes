@@ -1,5 +1,13 @@
-require 'bike'
+require_relative 'bike'
 
-describe Bike do
-  it { is_expected.to respond_to :working?}
+class DockingStation
+  attr_reader :bike
+
+  def release_bike
+    Bike.new
+  end
+  
+  def dock(bike)
+    @bike = bike
+  end
 end

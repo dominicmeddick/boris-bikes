@@ -7,6 +7,10 @@ class DockingStation
     @bike == nil
   end
 
+  def full?
+    @bike != nil
+  end
+
   def release_bike
     if empty?
       raise "no bikes in docking station"
@@ -16,6 +20,10 @@ class DockingStation
   end
   
   def dock(bike)
-    @bike = bike
+    if full?
+      raise "Dock is full!"
+    else
+      @bike = bike
+    end
   end
 end

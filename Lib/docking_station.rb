@@ -7,14 +7,6 @@ class DockingStation
     @bikes = []
   end
 
-  def empty?
-    @bikes == []
-  end
-
-  def full?
-    @bikes.length >= 20
-  end
-
   def release_bike
     if empty?
       raise "no bikes in docking station"
@@ -30,5 +22,15 @@ class DockingStation
       @bikes.push(bike)
       return bike
     end
+  end
+
+  private
+  
+  def empty?
+    @bikes == []
+  end
+
+  def full?
+    @bikes.length >= 20
   end
 end
